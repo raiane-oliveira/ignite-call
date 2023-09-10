@@ -37,3 +37,7 @@ export const ConnectSchedule = styled(Box, {
     fontWeight: '$medium',
   },
 })
+
+export const AuthError = styled(Text, {
+  color: '#f75a68',
+})
