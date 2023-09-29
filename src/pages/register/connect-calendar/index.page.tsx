@@ -10,7 +10,7 @@ import { ArrowRight, Check } from 'phosphor-react'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
-export default function Connect() {
+export default function ConnectCalendar() {
   const session = useSession()
   const router = useRouter()
 
