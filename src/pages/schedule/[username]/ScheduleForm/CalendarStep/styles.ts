@@ -1,4 +1,4 @@
-import { Box, Text, styled } from '@raiane-ignite-ui/react'
+import { Box, Text, keyframes, styled } from '@raiane-ignite-ui/react'
 
 export const Container = styled(Box, {
   margin: '$6 auto 0',
@@ -61,7 +61,7 @@ export const TimePickerList = styled('div', {
 export const TimePickerItem = styled('button', {
   border: 0,
   background: '$gray600',
-  padding: '$2 0',
+  padding: '$3 0',
   cursor: 'pointer',
   color: '$gray100',
   borderRadius: '$sm',
@@ -81,4 +81,21 @@ export const TimePickerItem = styled('button', {
   '&:focus': {
     boxShadow: '0 0 0 2px $colors$gray100',
   },
+})
+
+const ping = keyframes({
+  '0%': {
+    opacity: 1,
+  },
+  '100%': {
+    opacity: 0.6,
+  },
+})
+
+export const LoaderTimePickerItem = styled('div', {
+  background: '$gray600',
+  height: '$10',
+  borderRadius: '$sm',
+
+  animation: `${ping} 1.5s alternate infinite`,
 })
