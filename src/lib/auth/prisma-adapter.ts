@@ -34,8 +34,8 @@ export function PrismaAdapter(
         id: prismaUser.id,
         name: prismaUser.name,
         username: prismaUser.username,
-        email: prismaUser.email,
-        avatar_url: prismaUser.avatar_url,
+        email: String(prismaUser.email),
+        avatar_url: String(prismaUser.avatar_url),
         emailVerified: null,
       }
     },
@@ -53,8 +53,8 @@ export function PrismaAdapter(
         id: user.id,
         name: user.name,
         username: user.username,
-        email: user.email,
-        avatar_url: user.avatar_url,
+        email: String(user.email),
+        avatar_url: String(user.avatar_url),
         emailVerified: null,
       }
     },
@@ -72,8 +72,8 @@ export function PrismaAdapter(
         id: user.id,
         name: user.name,
         username: user.username,
-        email: user.email,
-        avatar_url: user.avatar_url,
+        email: String(user.email),
+        avatar_url: String(user.avatar_url),
         emailVerified: null,
       }
     },
@@ -99,9 +99,9 @@ export function PrismaAdapter(
         id: user.id,
         name: user.name,
         username: user.username,
-        email: user.email,
+        email: String(user.email),
         emailVerified: null,
-        avatar_url: user.avatar_url,
+        avatar_url: String(user.avatar_url),
       }
     },
 
@@ -112,7 +112,7 @@ export function PrismaAdapter(
         },
         data: {
           name: user.name,
-          email: user.email,
+          email: String(user.email),
           avatar_url: user.avatar_url,
         },
       })
@@ -121,8 +121,8 @@ export function PrismaAdapter(
         id: prismaUser.id,
         name: prismaUser.name,
         username: prismaUser.username,
-        email: prismaUser.email,
-        avatar_url: prismaUser.avatar_url,
+        email: String(prismaUser.email),
+        avatar_url: String(prismaUser.avatar_url),
         emailVerified: null,
       }
     },
@@ -184,9 +184,9 @@ export function PrismaAdapter(
         user: {
           id: user.id,
           name: user.name,
-          email: user.email,
+          email: String(user.email),
           username: user.username,
-          avatar_url: user.avatar_url,
+          avatar_url: String(user.avatar_url),
           emailVerified: null,
         },
       }

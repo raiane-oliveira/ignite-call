@@ -1,4 +1,4 @@
-import { Box, Text, styled } from '@raiane-ignite-ui/react'
+import { Box, styled } from '@raiane-ignite-ui/react'
 
 export const Form = styled(Box, {
   display: 'grid',
