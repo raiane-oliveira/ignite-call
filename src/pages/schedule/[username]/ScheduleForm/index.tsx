@@ -8,15 +8,15 @@ import { ToastContainer } from './styles'
 export function ScheduleForm() {
   const [selectedDateWithoutTime, setSelectedDateWithoutTime] =
     useState<Date | null>()
-  const [isScheduleSuccessful, setIsScheduleSuccessful] =
-    useState<boolean>(false)
+  const [successfulScheduleDate, setSuccessfulScheduleDate] =
+    useState<Date | null>(null)
 
   function handleClearSelectedDateTime() {
     setSelectedDateWithoutTime(null)
   }
 
-  function handleSuccessfulSchedule() {
-    setIsScheduleSuccessful(true)
+  function handleSuccessfulSchedule(date: Date) {
+    setSuccessfulScheduleDate(date)
   }
 
   if (selectedDateWithoutTime) {
@@ -24,19 +24,19 @@ export function ScheduleForm() {
       <ConfirmStep
         schedulingDate={selectedDateWithoutTime}
         onCancelConfirmation={handleClearSelectedDateTime}
-        onSuccessfulSchedule={handleSuccessfulSchedule}
+        onSuccessfulScheduleDate={handleSuccessfulSchedule}
       />
     )
   }
 
-  const describeDate = dayjs(selectedDateWithoutTime).format(
+  const describeDate = dayjs(successfulScheduleDate).format(
     'dddd[, ]DD[ de ]MMMM[ às ]HH[h]',
   )
 
   return (
     <>
       <CalendarStep onSelectDateTime={setSelectedDateWithoutTime} />
-      {isScheduleSuccessful && (
+      {successfulScheduleDate && (
         <ToastContainer>
           <Toast title="Agendamento realizado" description={describeDate}>
             {null}

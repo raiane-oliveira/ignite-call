@@ -19,13 +19,13 @@ type ConfirmFormData = z.infer<typeof confirmFormSchema>
 interface ConfirmStepProps {
   schedulingDate: Date
   onCancelConfirmation: () => void
-  onSuccessfulSchedule: () => void
+  onSuccessfulScheduleDate: (date: Date) => void
 }
 
 export function ConfirmStep({
   schedulingDate,
   onCancelConfirmation,
-  onSuccessfulSchedule,
+  onSuccessfulScheduleDate,
 }: ConfirmStepProps) {
   const {
     handleSubmit,
@@ -47,7 +47,7 @@ export function ConfirmStep({
         observations,
         date: schedulingDate,
       })
-      onSuccessfulSchedule()
+      onSuccessfulScheduleDate(schedulingDate)
     } catch (err) {
       alert('Não conseguimos agendar a sua call. Tente novamente mais tarde.')
     }
