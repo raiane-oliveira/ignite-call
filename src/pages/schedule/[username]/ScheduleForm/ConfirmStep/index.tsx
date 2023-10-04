@@ -19,11 +19,13 @@ type ConfirmFormData = z.infer<typeof confirmFormSchema>
 interface ConfirmStepProps {
   schedulingDate: Date
   onCancelConfirmation: () => void
+  onSuccessfulSchedule: () => void
 }
 
 export function ConfirmStep({
   schedulingDate,
   onCancelConfirmation,
+  onSuccessfulSchedule,
 }: ConfirmStepProps) {
   const {
     handleSubmit,
@@ -45,9 +47,7 @@ export function ConfirmStep({
         observations,
         date: schedulingDate,
       })
-      alert(
-        `Call agendada com sucesso! Aguarde até a data marcada que ${username} irá entrar no Google Meet.`,
-      )
+      onSuccessfulSchedule()
     } catch (err) {
       alert('Não conseguimos agendar a sua call. Tente novamente mais tarde.')
     }
