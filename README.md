@@ -3,7 +3,7 @@
    <div>
       <img src="https://repository-images.githubusercontent.com/657801497/d93c47a5-3cae-43ed-8a89-6851b9038ad6" alt="Ignite logo" width="90" height="50" />
     </div>
-    Ignite Shop
+    Ignite Call
   </a>
 </h1>
 
